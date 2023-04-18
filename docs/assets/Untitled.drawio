@@ -1,0 +1,147 @@
+<mxfile host="Electron" modified="2023-04-18T08:41:55.294Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" version="21.1.2" etag="Vy3yl9EdHMBYgtRPMafu" type="device">
+  <diagram id="U6V_GjBkOLSvwvCUSoy5" name="Page-1">
+    <mxGraphModel dx="3303" dy="2220" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="77" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=12;fontColor=#FFFFFF;fillColor=none;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-430" y="230" width="1350" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;gradientColor=none;fillColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="1" vertex="1">
+          <mxGeometry x="-300" y="290" width="1170" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="63" value="z" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="330" y="435" width="460" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Public subnet&lt;br&gt;&lt;b&gt;IP: &lt;/b&gt;&lt;font face=&quot;Lucida Console&quot; style=&quot;font-weight: bold;&quot;&gt;10.0.1.0/24&lt;/font&gt;" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#248814;fillColor=#E9F3E6;verticalAlign=top;align=left;spacingLeft=30;fontColor=#248814;dashed=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="63" vertex="1">
+          <mxGeometry width="460" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="edgeStyle=none;html=1;startArrow=classic;startFill=1;" parent="1" source="4" target="11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Developer" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.user;fillColor=#D2D3D3;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-770" y="517.75" width="45" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="edgeStyle=none;html=1;startArrow=classic;startFill=1;" parent="1" source="11" target="9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Internet" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet;fillColor=#D2D3D3;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="-600" y="509.5" width="79.5" height="79.5" as="geometry" />
+        </mxCell>
+        <mxCell id="98" value="" style="edgeStyle=none;html=1;strokeColor=#000000;fontColor=#FFFFFF;startArrow=classic;startFill=1;endArrow=classic;endFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="84" target="58" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-80" y="550" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="88" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="20" y="460" width="229.75" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="64" value="&lt;b&gt;&lt;font color=&quot;#000000&quot; style=&quot;font-size: 13px;&quot;&gt;Custom route table&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=1;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#ffffff;movable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="88" vertex="1">
+          <mxGeometry x="44.88000000000011" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="53" value="" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fillColor=none;gradientColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="88" vertex="1">
+          <mxGeometry y="30" width="229.75" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="54" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="53" vertex="1">
+          <mxGeometry width="229.75" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="55" value="Destination&lt;span style=&quot;white-space: pre;&quot;&gt;	&lt;/span&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=1;overflow=hidden;fillColor=#fa6800;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontColor=#FFFFFF;strokeColor=#C73500;fontStyle=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;" parent="54" vertex="1">
+          <mxGeometry width="153" height="40" as="geometry">
+            <mxRectangle width="153" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="56" value="Target" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=1;overflow=hidden;fillColor=#fa6800;top=0;left=0;bottom=0;right=0;pointerEvents=1;fontColor=#ffffff;strokeColor=#C73500;fontStyle=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;" parent="54" vertex="1">
+          <mxGeometry x="153" width="77" height="40" as="geometry">
+            <mxRectangle width="77" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="99" style="edgeStyle=none;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;strokeColor=#FFFFFF;fontColor=#FFFFFF;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" parent="54" source="55" target="55" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="57" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="53" vertex="1">
+          <mxGeometry y="40" width="229.75" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="&lt;font face=&quot;Lucida Console&quot;&gt;10.0.0.0/16&lt;/font&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=1;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;" parent="57" vertex="1">
+          <mxGeometry width="153" height="40" as="geometry">
+            <mxRectangle width="153" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="59" value="local" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=1;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;" parent="57" vertex="1">
+          <mxGeometry x="153" width="77" height="40" as="geometry">
+            <mxRectangle width="77" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="53" vertex="1">
+          <mxGeometry y="80" width="229.75" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="61" value="&lt;font face=&quot;Lucida Console&quot;&gt;0.0.0.0&lt;/font&gt;" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=1;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;" parent="60" vertex="1">
+          <mxGeometry width="153" height="40" as="geometry">
+            <mxRectangle width="153" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="62" value="igw-id" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=1;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;" parent="60" vertex="1">
+          <mxGeometry x="153" width="77" height="40" as="geometry">
+            <mxRectangle width="77" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="95" value="" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#000000;fontColor=#FFFFFF;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startFill=1;endFill=1;" parent="1" target="59" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="550" as="sourcePoint" />
+            <mxPoint x="220" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="109" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-430" y="230" width="165" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="2" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.cloud_2;fillColor=#F58534;gradientColor=none;" parent="109" vertex="1">
+          <mxGeometry width="75" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="108" value="&lt;font color=&quot;#000000&quot;&gt;AWS Cloud&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontFamily=Helvetica;fontColor=#FFFFFF;fontSize=13;" parent="109" vertex="1">
+          <mxGeometry x="75" y="22.5" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-300" y="290" width="188.89473684210526" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="90" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#945DF2;gradientDirection=north;fillColor=#5A30B5;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.vpc;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="89" vertex="1">
+          <mxGeometry width="74.40541948931735" height="74.40541948931735" as="geometry" />
+        </mxCell>
+        <mxCell id="91" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;AWS VPC&lt;br&gt;&lt;b style=&quot;&quot;&gt;IP: &lt;font style=&quot;&quot; face=&quot;Lucida Console&quot;&gt;10.0.0.0/16&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=1;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;fontColor=#ffffff;movable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="89" vertex="1">
+          <mxGeometry x="86.78947368421053" y="19.997500000000002" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="105" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="370" y="470" width="310" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="&lt;font color=&quot;#000000&quot;&gt;Internet&lt;br&gt;gateway&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#4D27AA;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.internet_gateway;" parent="1" vertex="1">
+          <mxGeometry x="-340" y="511" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="84" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 12px;&quot;&gt;Router&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#4D27AA;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.customer_gateway;" parent="1" vertex="1">
+          <mxGeometry x="-156.5" y="511" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="96" value="" style="edgeStyle=none;html=1;strokeColor=#000000;fontColor=#FFFFFF;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" parent="1" source="9" target="84" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q6gqKM6wIXDq9hAY0RPG-129" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Q6gqKM6wIXDq9hAY0RPG-114" target="Q6gqKM6wIXDq9hAY0RPG-124">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q6gqKM6wIXDq9hAY0RPG-114" value="Security&lt;br&gt;group&lt;br&gt;(firewall)" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Network_Security_Groups_Classic.svg;" vertex="1" parent="1">
+          <mxGeometry x="550" y="525" width="37" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Q6gqKM6wIXDq9hAY0RPG-122" value="diverts&lt;br&gt;traffic&lt;br&gt;to" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="112" target="Q6gqKM6wIXDq9hAY0RPG-114">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Q6gqKM6wIXDq9hAY0RPG-124" value="AWS&lt;br&gt;EC2 instance" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#F78E04;gradientDirection=north;fillColor=#D05C17;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="683.5049047039295" y="505.3848897451825" width="89.22535676053432" height="89.22535676053432" as="geometry" />
+        </mxCell>
+        <mxCell id="Q6gqKM6wIXDq9hAY0RPG-128" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="340" y="511" width="109.99999999999999" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="81" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#0f0f0f&quot;&gt;Elastic IP&lt;br&gt;&lt;/font&gt;&lt;b style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot; color=&quot;#000000&quot;&gt;IP:&amp;nbsp;&lt;font style=&quot;font-size: 11px;&quot; face=&quot;Lucida Console&quot;&gt;10.0.1.50&lt;/font&gt;&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;font color=&quot;#0f0f0f&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.elastic_ip;fillColor=#F58534;gradientColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="Q6gqKM6wIXDq9hAY0RPG-128" vertex="1">
+          <mxGeometry x="59.999999999999986" y="31.540000000000077" width="50" height="14.92" as="geometry" />
+        </mxCell>
+        <mxCell id="112" value="&lt;font color=&quot;#000000&quot;&gt;Network&lt;br&gt;interface&lt;br&gt;(assigned IPs:&lt;br&gt;&lt;font face=&quot;Lucida Console&quot;&gt;&lt;b&gt;[&lt;br&gt;10.0.1.50&lt;br&gt;&lt;/b&gt;&lt;/font&gt;])&lt;br&gt;&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#4D27AA;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_interface;fontFamily=Helvetica;" parent="Q6gqKM6wIXDq9hAY0RPG-128" vertex="1">
+          <mxGeometry width="78" height="78" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

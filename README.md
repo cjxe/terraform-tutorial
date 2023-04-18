@@ -1,6 +1,8 @@
 # About
 A terraform file that creates a VPC and initialises a subnet in it.
 
+![AWS cloud architecture diagram](./docs/assets/cloud_architecture.png)
+
 # Installation
 The build has been tested with Terraform v1.4.5.
 
@@ -23,7 +25,12 @@ terraform plan
 ```
 terraform apply
 ```
-6. Destory instances with:
+6. Create a `.pem` key with the name "main-key" in the created EC2 instance.
+7. SSH to the server
+```
+ssh -i "main-key.pem" ubuntu@private.ip
+```
+8. Destory instances with:
 ```
 terraform destroy
 ```

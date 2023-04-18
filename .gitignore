@@ -1,8 +1,16 @@
 # MacOS specific files
 .DS_STORE
 
+# Assets
+/docs/assets/*.bkp
+/docs/assets/*.dtmp
+
+# Keys
+**.pem
+
 # Terraform files
 /.terraform
 **/.terraform/*
 *.tfstate
 *.tfstate.*
+
