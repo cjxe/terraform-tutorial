@@ -1,7 +1,7 @@
 # About
 A terraform file that creates a VPC and initialises a public subnet in it.
 
-![AWS cloud infrastructure diagram](./docs/assets/aws_infrastructure.png)
+![project architecture](./docs/assets/aws_architecture.png)
 
 # Installation
 The build has been tested with **Terraform v1.4.5**.
