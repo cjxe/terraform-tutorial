@@ -3,18 +3,19 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Create a VPC
-resource "aws_vpc" "prod-vpc" {
+# Define a VPC
+resource "aws_vpc" "prod_vpc" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
     Name = "terraform-tutorial"
   }
+
 }
 
-# Create an Internet Gateway
-resource "aws_internet_gateway" "prod-igw" {
-  vpc_id = aws_vpc.prod-vpc.id
+# Define an Internet Gateway
+resource "aws_internet_gateway" "prod_igw" {
+  vpc_id = aws_vpc.prod_vpc.id
 
   tags = {
     Name = "terraform-tutorial"
@@ -22,17 +23,17 @@ resource "aws_internet_gateway" "prod-igw" {
 }
 
 # Create custom route table
-resource "aws_route_table" "prod-route-table" {
-  vpc_id = aws_vpc.prod-vpc.id
+resource "aws_route_table" "custom_route_table" {
+  vpc_id = aws_vpc.prod_vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.prod-igw.id
+    gateway_id = aws_internet_gateway.prod_igw.id
   }
 
   route {
     ipv6_cidr_block = "::/0"
-    gateway_id      = aws_internet_gateway.prod-igw.id
+    gateway_id      = aws_internet_gateway.prod_igw.id
   }
 
   tags = {
@@ -40,33 +41,31 @@ resource "aws_route_table" "prod-route-table" {
   }
 }
 
-# Create a subnet
-resource "aws_subnet" "prod-subnet" {
-  vpc_id            = aws_vpc.prod-vpc.id
+# Define a public subnet
+resource "aws_subnet" "public_subnet" {
+  vpc_id            = aws_vpc.prod_vpc.id
   cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
 
+  # Associate the public subnet with the internet gateway
   tags = {
-    Name = "terraform-tutorial"
+    Name = "public_subnet"
   }
+
+  depends_on = [
+    aws_internet_gateway.prod_igw
+  ]
 }
 
-# Associate a subnet with a route table
-resource "aws_route_table_association" "prod-route-table-association" {
-  subnet_id      = aws_subnet.prod-subnet.id
-  route_table_id = aws_route_table.prod-route-table.id
-}
-
-# Create a security group
-resource "aws_security_group" "allow_web" {
-  name        = "allow_web_traffic"
-  description = "Allow web traffic"
-  vpc_id      = aws_vpc.prod-vpc.id
+# Define a security group for the public subnet
+resource "aws_security_group" "public_sg" {
+  name_prefix = "public_sg"
+  vpc_id      = aws_vpc.prod_vpc.id
 
   ingress {
-    description = "HTTPS traffic"
-    from_port   = 443
-    to_port     = 443
+    description = "SSH traffic"
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"] # any ip address can access it
   }
@@ -80,11 +79,25 @@ resource "aws_security_group" "allow_web" {
   }
 
   ingress {
-    description = "SSH traffic"
-    from_port   = 22
-    to_port     = 22
+    description = "HTTPS traffic"
+    from_port   = 443
+    to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"] # any ip address can access it
+  }
+
+  ingress {
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -94,47 +107,22 @@ resource "aws_security_group" "allow_web" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
-
-  tags = {
-    Name = "terraform-tutorial"
-  }
 }
 
-# Create a network interface with an ip in the subnet that was created in step 4
-resource "aws_network_interface" "prod-network-interface" {
-  subnet_id = aws_subnet.prod-subnet.id
-
-  private_ips     = ["10.0.1.50"]
-  security_groups = [aws_security_group.allow_web.id]
-
-  tags = {
-    Name = "terraform-tutorial"
-  }
+# Associate a subnet with a route table
+resource "aws_route_table_association" "custom_route_table_association" {
+  subnet_id      = aws_subnet.public_subnet.id
+  route_table_id = aws_route_table.custom_route_table.id
 }
 
-# Create an Elastic IP
-resource "aws_eip" "prod-eip" {
-  vpc                       = true
-  network_interface         = aws_network_interface.prod-network-interface.id
-  associate_with_private_ip = "10.0.1.50"
-  depends_on = [
-    aws_internet_gateway.prod-igw
-  ]
-
-  tags = {
-    Name = "terraform-tutorial"
-  }
-}
-
-# Create an EC2 instance
-resource "aws_instance" "prod-ec2-instance" {
-  ami               = "ami-007855ac798b5175e"
-  instance_type     = "t2.micro"
-  availability_zone = "us-east-1a"
-  key_name          = "main-key"
+# Define two EC2 instances
+resource "aws_instance" "ec2_instance_1" {
+  ami           = "ami-007855ac798b5175e"
+  instance_type = "t2.micro"
+  key_name      = "main-key"
 
   network_interface {
-    network_interface_id = aws_network_interface.prod-network-interface.id
+    network_interface_id = aws_network_interface.eni_1.id
     device_index         = 0
   }
 
@@ -148,17 +136,31 @@ resource "aws_instance" "prod-ec2-instance" {
               EOF
 
   tags = {
-    Name = "terraform-tutorial"
+    Name = "ec2_instance_1"
   }
 }
 
-output "server_id" {
-  value = aws_instance.prod-ec2-instance.id
-}
-output "server_private_ip" {
-  value = aws_instance.prod-ec2-instance.private_ip
+# Define an Elastic IP for each instance
+# Why do we use EIPs? https://stackoverflow.com/a/50306357/12959962
+resource "aws_eip" "eip_1" {
+  vpc = true
+  # ! you can only specify either `instance` or `network_interface`
+  instance                  = aws_instance.ec2_instance_1.id
+  associate_with_private_ip = "10.0.1.50"
 }
 
-output "server_public_ip" {
-  value = aws_instance.prod-ec2-instance.public_ip
+# Define an Elastic Network Interface for each instance
+resource "aws_network_interface" "eni_1" {
+  subnet_id = aws_subnet.public_subnet.id
+
+  private_ips     = ["10.0.1.50"]
+  security_groups = [aws_security_group.public_sg.id]
+}
+
+output "ec2_instance_1_private_ip" {
+  value = aws_instance.ec2_instance_1.private_ip
+}
+
+output "ec2_instance_1_public_ip" {
+  value = aws_eip.eip_1.public_ip
 }
